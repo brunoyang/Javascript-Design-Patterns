@@ -45,22 +45,13 @@ var Windows = function(car) {
 
 Windows.prototype = new CarDecorator();
 
-var ACD = function(car){
+var AC = function(car){
   CarDecorator.call(this, car);
 };
 
-ACD.prototype = new CarDecorator();
+AC.prototype = new CarDecorator();
 
-ACD.prototype.start = function(){
+AC.prototype.start = function(){
   this.car.start();
   console.log('打开空调');
 };
-
-var car = new Car();
-
-car = new Windows(car);
-car = new Locks(car);
-car = new ACD(car);
-
-car.start();
-car.drive();

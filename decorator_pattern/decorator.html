@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>装饰者模式</title>
 </head>
+
 <body>
   <script src="decorator.js"></script>
+  <script>
+    var car = new Car();
+
+    car = new Windows(car);
+    car = new Locks(car);
+    car = new AC(car);
+
+    car.start();
+    car.drive();
+  </script>
 </body>
+
 </html>
